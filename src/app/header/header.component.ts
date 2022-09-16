@@ -66,7 +66,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   getHourClass(): string {
     let hourStyle
 
-    if(Number(new Date().getHours) >= 6 && Number(new Date().getHours) <= 18) {
+    if(Number(new Date().getHours()) >= 6 && Number(new Date().getHours()) <= 18) {
         hourStyle = 'day  fas fa-sun'
         this.textTime = 'Bom Dia'
       } else {
