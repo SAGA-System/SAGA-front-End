@@ -169,4 +169,26 @@
   transition: background 0s;
 }
 
+.userNameTooltip{
+  white-space: nowrap;
+  width: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dateHourContent{
+  display: block;
+  margin-top: 2px;
+  font-size: 14px;
+}
+
+.hourIcon{
+  margin-right: 9px;
+  font-size: 16px;
+}
+
+.textTime,
+.nameUser{
+  font-size: 16px;
+}
 

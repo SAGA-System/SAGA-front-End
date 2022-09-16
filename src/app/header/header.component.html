@@ -7,6 +7,12 @@
           <i class="far fa-search search-icon"></i>
         </div>
       </div> -->
+      <div class="dateHour">
+        <i class="hourIcon" [ngClass]="getHourClass()"></i>
+        <span class="textTime"><b>{{textTime}}</b></span>
+        <span class="nameUser"><b> {{nameUser}}</b></span>
+        <span class="dateHourContent">{{dateTime | date:'dd/MM/yyyy &bull; HH:mm:ss'}}</span>
+      </div>
     </div>
     <div class="head-content-right">
       <div class="head-menu">
@@ -34,10 +40,7 @@
   <div class="overlay overlay-user overlay-fall" cdkMenu>
     <ul>
       <li *ngFor="let item of userItems">
-        <span style="  white-space: nowrap;
-          width: 50px;
-          overflow: hidden;
-          text-overflow: ellipsis; ">{{item.name}}</span>
+        <span class="userNameTooltip">{{item.name}}</span>
         <a>
           <i class="icon" [ngClass]="item.icon"></i>
           <span>{{item.label}}</span>
