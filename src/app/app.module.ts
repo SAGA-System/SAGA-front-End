@@ -1,4 +1,4 @@
-import { inicioComponent } from './dashboard/inicio.component';
+import { inicioComponent } from './inicio/inicio.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
