@@ -1,24 +1,22 @@
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ProductsComponent } from './products/products.component';
-import { StatisticsComponent } from './statistics/statistics.component';
-import { PagesComponent } from './pages/pages.component';
-import { MediaComponent } from './media/media.component';
-import { SettingsComponent } from './settings/settings.component';
+import { inicioComponent } from './dashboard/inicio.component';
+import { ProfessoresComponent } from './professores/professores.component';
+import { SuporteComponent } from './suporte/suporte.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'DashboardComponent', pathMatch: 'full'},
-  {path: 'dashboard', component: DashboardComponent},
-  {path: 'products', component: ProductsComponent},
-  {path: 'statistics', component: StatisticsComponent},
+  {path: '', redirectTo: 'inicio', pathMatch: 'full'},
+  {path: 'inicio', component: inicioComponent},
   {
-    path:'coupens',
-    loadChildren: () => import('./coupens/coupens.module').then(m => m.CoupensModule)
+    path:'mencoes',
+    loadChildren: () => import('./mencoes/mencoes.module').then(m => m.MencoesModule)
   },
-  {path: 'pages', component: PagesComponent},
-  {path: 'media', component: MediaComponent},
-  {path: 'settings', component: SettingsComponent},
+  {path: 'professores', component: ProfessoresComponent},
+  {
+    path:'materias',
+    loadChildren: () => import('./materias/materias.module').then(m => m.MateriasModule)
+  },
+  {path: 'suporte', component: SuporteComponent},
 ];
 
 @NgModule({

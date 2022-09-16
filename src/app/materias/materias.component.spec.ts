@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CoupenListComponent } from './coupen-list.component';
+import { MateriasComponent } from './materias.component';
 
-describe('CoupenListComponent', () => {
-  let component: CoupenListComponent;
-  let fixture: ComponentFixture<CoupenListComponent>;
+describe('MateriasComponent', () => {
+  let component: MateriasComponent;
+  let fixture: ComponentFixture<MateriasComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CoupenListComponent ]
+      declarations: [ MateriasComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CoupenListComponent);
+    fixture = TestBed.createComponent(MateriasComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

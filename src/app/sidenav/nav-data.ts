@@ -2,50 +2,50 @@ import { INavbarData } from "./helper";
 
 export const navbarData: INavbarData[] = [
   {
-    routeLink: 'dashboard',
+    routeLink: 'inicio',
     icon: 'fal fa-home',
-    label: 'Dashboard'
+    label: 'Início'
   },
   {
-    routeLink: 'products',
-    icon: 'fal fa-box-open',
-    label: 'Products'
-  },
-  {
-    routeLink: 'statistics',
-    icon: 'fal fa-chart-bar',
-    label: 'Statistics'
-  },
-  {
-    routeLink: 'coupens',
-    icon: 'fal fa-tags',
-    label: 'Coupens',
+    routeLink: 'mencoes',
+    icon: 'fas fa-chart-line',
+    label: 'Menções',
     expanded: false,
     items: [
       {
-          routeLink: 'coupens/list',
-          label:'List Coupens'
+          routeLink: 'mencoes/boletim',
+          label:'Boletim'
       },
       {
-        routeLink: 'coupens/create',
-        label:'Create Coupens'
+        routeLink: 'mencoes/faltas',
+        label:'Faltas'
       }
     ]
   },
   {
-    routeLink: 'pages',
-    icon: 'fal fa-file',
-    label: 'Pages'
+    routeLink: 'professores',
+    icon: 'fas fa-chalkboard-teacher',
+    label: 'Professores'
   },
   {
-    routeLink: 'media',
-    icon: 'fal fa-camera',
-    label: 'Media'
+    routeLink: 'materias',
+    icon: 'fas fa-books',
+    label: 'Matérias',
+    expanded: false,
+    items: [
+      {
+          routeLink: 'materias/grade',
+          label:'Grade'
+      },
+      {
+        routeLink: 'materias/ptds',
+        label:'PTDs'
+      }
+    ]
   },
   {
-    routeLink: 'settings',
-    icon: 'fal fa-cog',
-    label: 'Settings'
+    routeLink: 'suporte',
+    icon: 'far fa-question-square',
+    label: 'Suporte'
   },
-
 ];
