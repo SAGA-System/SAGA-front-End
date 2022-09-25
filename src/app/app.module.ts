@@ -14,6 +14,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { CdkMenuModule } from '@angular/cdk/menu';
 import { ProfessoresComponent } from './professores/professores.component';
 import { SuporteComponent } from './suporte/suporte.component';
+import { InicioModule } from './inicio/inicio.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,6 @@ import { SuporteComponent } from './suporte/suporte.component';
     SidenavComponent,
     SublevelMenuComponent,
     HeaderComponent,
-    inicioComponent,
     ProfessoresComponent,
     SuporteComponent,
   ],
@@ -31,7 +31,8 @@ import { SuporteComponent } from './suporte/suporte.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     OverlayModule,
-    CdkMenuModule
+    CdkMenuModule,
+    InicioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

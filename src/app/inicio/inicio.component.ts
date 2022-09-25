@@ -6,6 +6,149 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./inicio.component.scss']
 })
 export class inicioComponent implements OnInit {
+//  listHeight: string = 'auto';
+
+  dummyData?: Array<any> = [
+    {
+      messages: 'mensagem bacana',
+      dateHour: '21/01/21 00:00'
+    },
+    {
+      messages: 'mensagem bacana',
+      dateHour: '21/01/21 00:00'
+    },
+    {
+      messages: 'mensagem bacana',
+      dateHour: '21/01/21 00:00'
+    },
+    {
+      messages: 'mensagem bacana',
+      dateHour: '21/01/21 00:00'
+    },
+    {
+      messages: 'mensagem bacana',
+      dateHour: '21/01/21 00:00'
+    },
+    {
+      messages: 'mensagem bacana',
+      dateHour: '21/01/21 00:00'
+    },
+    {
+      messages: 'mensagem bacana',
+      dateHour: '21/01/21 00:00'
+    },
+    {
+      messages: 'mensagem bacana',
+      dateHour: '21/01/21 00:00'
+    },
+    {
+      messages: 'mensagem bacana',
+      dateHour: '21/01/21 00:00'
+    },
+    {
+      messages: 'mensagem bacana',
+      dateHour: '21/01/21 00:00'
+    },
+    {
+      messages: 'mensagem bacana',
+      dateHour: '21/01/21 00:00'
+    },
+    {
+      messages: 'mensagem bacana',
+      dateHour: '21/01/21 00:00'
+    },
+    {
+      messages: 'mensagem bacana',
+      dateHour: '21/01/21 00:00'
+    },
+    {
+      messages: 'mensagem bacana',
+      dateHour: '21/01/21 00:00'
+    },
+    {
+      messages: 'mensagem bacana',
+      dateHour: '21/01/21 00:00'
+    },
+    {
+      messages: 'mensagem bacana',
+      dateHour: '21/01/21 00:00'
+    },
+
+    {
+      messages: 'mensagem bacana',
+      dateHour: '21/01/21 00:00'
+    },
+    {
+      messages: 'mensagem bacana',
+      dateHour: '21/01/21 00:00'
+    },
+    {
+      messages: 'mensagem bacana',
+      dateHour: '21/01/21 00:00'
+    },
+    {
+      messages: 'mensagem bacana',
+      dateHour: '21/01/21 00:00'
+    },
+
+  ];
+
+  dummyNews?: Array<any> = [
+    {
+      news: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae pharetra dui. Morbi rutrum dolor enim, ac congue dolor posuere at. Nullam metus mauris, vestibulum in neque sit amet, molestie luctus lorem. Donec aliquam convallis quam, in euismod quam feugiat suscipit. Cras interdum, purus ut sagittis vulputate, felis ante iaculis magna, in lacinia sem risus vitae leo. Maecenas quis orci quis lacus efficitur sagittis vitae vitae nulla. Vestibulum pellentesque volutpat massa a maximus.'
+    },
+    {
+      news: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae pharetra dui. Morbi rutrum dolor enim, ac congue dolor posuere at. Nullam metus mauris, vestibulum in neque sit amet, molestie luctus lorem. Donec aliquam convallis quam, in euismod quam feugiat suscipit. Cras interdum, purus ut sagittis vulputate, felis ante iaculis magna, in lacinia sem risus vitae leo. Maecenas quis orci quis lacus efficitur sagittis vitae vitae nulla. Vestibulum pellentesque volutpat massa a maximus.'
+    },
+    {
+      news: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae pharetra dui. Morbi rutrum dolor enim, ac congue dolor posuere at. Nullam metus mauris, vestibulum in neque sit amet, molestie luctus lorem. Donec aliquam convallis quam, in euismod quam feugiat suscipit. Cras interdum, purus ut sagittis vulputate, felis ante iaculis magna, in lacinia sem risus vitae leo. Maecenas quis orci quis lacus efficitur sagittis vitae vitae nulla. Vestibulum pellentesque volutpat massa a maximus.'
+    },
+    {
+      news: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae pharetra dui. Morbi rutrum dolor enim, ac congue dolor posuere at. Nullam metus mauris, vestibulum in neque sit amet, molestie luctus lorem. Donec aliquam convallis quam, in euismod quam feugiat suscipit. Cras interdum, purus ut sagittis vulputate, felis ante iaculis magna, in lacinia sem risus vitae leo. Maecenas quis orci quis lacus efficitur sagittis vitae vitae nulla. Vestibulum pellentesque volutpat massa a maximus.'
+    },
+    {
+      news: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae pharetra dui. Morbi rutrum dolor enim, ac congue dolor posuere at. Nullam metus mauris, vestibulum in neque sit amet, molestie luctus lorem. Donec aliquam convallis quam, in euismod quam feugiat suscipit. Cras interdum, purus ut sagittis vulputate, felis ante iaculis magna, in lacinia sem risus vitae leo. Maecenas quis orci quis lacus efficitur sagittis vitae vitae nulla. Vestibulum pellentesque volutpat massa a maximus.'
+    },
+    {
+      news: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae pharetra dui. Morbi rutrum dolor enim, ac congue dolor posuere at. Nullam metus mauris, vestibulum in neque sit amet, molestie luctus lorem. Donec aliquam convallis quam, in euismod quam feugiat suscipit. Cras interdum, purus ut sagittis vulputate, felis ante iaculis magna, in lacinia sem risus vitae leo. Maecenas quis orci quis lacus efficitur sagittis vitae vitae nulla. Vestibulum pellentesque volutpat massa a maximus.'
+    },
+    {
+      news: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae pharetra dui. Morbi rutrum dolor enim, ac congue dolor posuere at. Nullam metus mauris, vestibulum in neque sit amet, molestie luctus lorem. Donec aliquam convallis quam, in euismod quam feugiat suscipit. Cras interdum, purus ut sagittis vulputate, felis ante iaculis magna, in lacinia sem risus vitae leo. Maecenas quis orci quis lacus efficitur sagittis vitae vitae nulla. Vestibulum pellentesque volutpat massa a maximus.'
+    },
+    {
+      news: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae pharetra dui. Morbi rutrum dolor enim, ac congue dolor posuere at. Nullam metus mauris, vestibulum in neque sit amet, molestie luctus lorem. Donec aliquam convallis quam, in euismod quam feugiat suscipit. Cras interdum, purus ut sagittis vulputate, felis ante iaculis magna, in lacinia sem risus vitae leo. Maecenas quis orci quis lacus efficitur sagittis vitae vitae nulla. Vestibulum pellentesque volutpat massa a maximus.'
+    },
+    {
+      news: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae pharetra dui. Morbi rutrum dolor enim, ac congue dolor posuere at. Nullam metus mauris, vestibulum in neque sit amet, molestie luctus lorem. Donec aliquam convallis quam, in euismod quam feugiat suscipit. Cras interdum, purus ut sagittis vulputate, felis ante iaculis magna, in lacinia sem risus vitae leo. Maecenas quis orci quis lacus efficitur sagittis vitae vitae nulla. Vestibulum pellentesque volutpat massa a maximus.'
+    },
+    {
+      news: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae pharetra dui. Morbi rutrum dolor enim, ac congue dolor posuere at. Nullam metus mauris, vestibulum in neque sit amet, molestie luctus lorem. Donec aliquam convallis quam, in euismod quam feugiat suscipit. Cras interdum, purus ut sagittis vulputate, felis ante iaculis magna, in lacinia sem risus vitae leo. Maecenas quis orci quis lacus efficitur sagittis vitae vitae nulla. Vestibulum pellentesque volutpat massa a maximus.'
+    },
+    {
+      news: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae pharetra dui. Morbi rutrum dolor enim, ac congue dolor posuere at. Nullam metus mauris, vestibulum in neque sit amet, molestie luctus lorem. Donec aliquam convallis quam, in euismod quam feugiat suscipit. Cras interdum, purus ut sagittis vulputate, felis ante iaculis magna, in lacinia sem risus vitae leo. Maecenas quis orci quis lacus efficitur sagittis vitae vitae nulla. Vestibulum pellentesque volutpat massa a maximus.'
+    },
+    {
+      news: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae pharetra dui. Morbi rutrum dolor enim, ac congue dolor posuere at. Nullam metus mauris, vestibulum in neque sit amet, molestie luctus lorem. Donec aliquam convallis quam, in euismod quam feugiat suscipit. Cras interdum, purus ut sagittis vulputate, felis ante iaculis magna, in lacinia sem risus vitae leo. Maecenas quis orci quis lacus efficitur sagittis vitae vitae nulla. Vestibulum pellentesque volutpat massa a maximus.'
+    },
+    {
+      news: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae pharetra dui. Morbi rutrum dolor enim, ac congue dolor posuere at. Nullam metus mauris, vestibulum in neque sit amet, molestie luctus lorem. Donec aliquam convallis quam, in euismod quam feugiat suscipit. Cras interdum, purus ut sagittis vulputate, felis ante iaculis magna, in lacinia sem risus vitae leo. Maecenas quis orci quis lacus efficitur sagittis vitae vitae nulla. Vestibulum pellentesque volutpat massa a maximus.'
+    },
+    {
+      news: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae pharetra dui. Morbi rutrum dolor enim, ac congue dolor posuere at. Nullam metus mauris, vestibulum in neque sit amet, molestie luctus lorem. Donec aliquam convallis quam, in euismod quam feugiat suscipit. Cras interdum, purus ut sagittis vulputate, felis ante iaculis magna, in lacinia sem risus vitae leo. Maecenas quis orci quis lacus efficitur sagittis vitae vitae nulla. Vestibulum pellentesque volutpat massa a maximus.'
+    },
+    {
+      news: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae pharetra dui. Morbi rutrum dolor enim, ac congue dolor posuere at. Nullam metus mauris, vestibulum in neque sit amet, molestie luctus lorem. Donec aliquam convallis quam, in euismod quam feugiat suscipit. Cras interdum, purus ut sagittis vulputate, felis ante iaculis magna, in lacinia sem risus vitae leo. Maecenas quis orci quis lacus efficitur sagittis vitae vitae nulla. Vestibulum pellentesque volutpat massa a maximus.'
+    },
+    {
+      news: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae pharetra dui. Morbi rutrum dolor enim, ac congue dolor posuere at. Nullam metus mauris, vestibulum in neque sit amet, molestie luctus lorem. Donec aliquam convallis quam, in euismod quam feugiat suscipit. Cras interdum, purus ut sagittis vulputate, felis ante iaculis magna, in lacinia sem risus vitae leo. Maecenas quis orci quis lacus efficitur sagittis vitae vitae nulla. Vestibulum pellentesque volutpat massa a maximus.'
+    },
+    {
+      news: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae pharetra dui. Morbi rutrum dolor enim, ac congue dolor posuere at. Nullam metus mauris, vestibulum in neque sit amet, molestie luctus lorem. Donec aliquam convallis quam, in euismod quam feugiat suscipit. Cras interdum, purus ut sagittis vulputate, felis ante iaculis magna, in lacinia sem risus vitae leo. Maecenas quis orci quis lacus efficitur sagittis vitae vitae nulla. Vestibulum pellentesque volutpat massa a maximus.'
+    },
+    {
+      news: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae pharetra dui. Morbi rutrum dolor enim, ac congue dolor posuere at. Nullam metus mauris, vestibulum in neque sit amet, molestie luctus lorem. Donec aliquam convallis quam, in euismod quam feugiat suscipit. Cras interdum, purus ut sagittis vulputate, felis ante iaculis magna, in lacinia sem risus vitae leo. Maecenas quis orci quis lacus efficitur sagittis vitae vitae nulla. Vestibulum pellentesque volutpat massa a maximus.'
+    },
+  ];
 
   constructor() { }
 

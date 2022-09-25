@@ -1,14 +1,44 @@
 <h1>Início</h1>
 <span>/Início</span>
-<div class="card">
-    <div class="card-head">Lorem ipsum </div>
-    <div class="card-body">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas ducimus soluta, quasi aut ipsa non, ullam enim rem repudiandae, vitae provident animi. Inventore rerum, voluptas optio dignissimos blanditiis modi illo!
+<div class="row col-md-12 m-0 p-0">
+  <div class="row col-md-7">
+    <div class="card-saga col-md-12 p-0">
+      <div class="card-head-saga">
+        <div class="row col-md-12 p-0">
+          <div class="col-md-9">
+            Mensagens para o Aluno
+          </div>
+          <div class="col-md-3 text-left">
+            Data e Hora
+          </div>
+        </div>
+      </div>
+      <dx-scroll-view [scrollByThumb]="true" class="without-padding-x">
+        <div class="card-body-saga" *ngFor="let data of dummyData">
+
+          <div class="row col-md-12 p-0">
+
+            <div class="col-md-9 gc-col-ellipsis">
+              {{data.messages}}
+            </div>
+            <div class="col-md-3 text-left">
+              {{data.dateHour}}
+            </div>
+          </div>
+
+        </div>
+      </dx-scroll-view>
     </div>
-</div>
-<div class="card">
-  <div class="card-head">Lorem ipsum </div>
-  <div class="card-body">
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas ducimus soluta, quasi aut ipsa non, ullam enim rem repudiandae, vitae provident animi. Inventore rerum, voluptas optio dignissimos blanditiis modi illo!
+  </div>
+
+  <div class="row col-md-5 ml-3 p-0">
+    <div class="card-saga col-md-12 p-0">
+      <div class="card-head-saga">Notícias</div>
+      <dx-scroll-view [scrollByThumb]="true" class="without-padding-x">
+        <div class="card-body-saga gc-col-ellipsis" *ngFor="let data of dummyNews">
+          <span>{{data.news}}</span>
+        </div>
+      </dx-scroll-view>
+    </div>
   </div>
 </div>
