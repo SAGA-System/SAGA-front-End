@@ -1,7 +1,8 @@
+import { DxButtonModule, DxChartModule, DxScrollViewModule, DxSelectBoxModule } from 'devextreme-angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CoupensRoutingModule } from './mencoes-routing.module';
+import { MencoesRoutingModule } from './mencoes-routing.module';
 import { mencoesComponent } from './mencoes.component';
 import { FaltasComponent } from './faltas/faltas.component';
 
@@ -10,7 +11,11 @@ import { FaltasComponent } from './faltas/faltas.component';
   declarations: [mencoesComponent, FaltasComponent],
   imports: [
     CommonModule,
-    CoupensRoutingModule
+    MencoesRoutingModule,
+    DxScrollViewModule,
+    DxChartModule,
+    DxSelectBoxModule,
+    DxButtonModule
   ]
 })
 export class MencoesModule { }

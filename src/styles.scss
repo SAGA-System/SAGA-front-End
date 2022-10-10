@@ -33,6 +33,11 @@ body {
     padding: 1rem 1.5rem;
     max-height: 39rem;
   }
+
+  .card-body-test-saga {
+    padding: 1rem 1.5rem;
+    max-height: 39rem;
+  }
 }
 
 .gc-col-ellipsis {
@@ -48,4 +53,12 @@ body {
 
 ::ng-deep dx-scroll-view .dx-scrollable-scrollbar .dx-scrollable-scroll .dx-scrollable-scroll-content{
   background-color: #009099;
+}
+
+label{
+  font-size: 13px;
+  font-weight: bold;
+  text-align: left !important;
+  display: flex;
+  margin-bottom: 5px;
 }

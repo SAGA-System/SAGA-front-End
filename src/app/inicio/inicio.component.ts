@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./inicio.component.scss']
 })
 export class inicioComponent implements OnInit {
-//  listHeight: string = 'auto';
 
   dummyData?: Array<any> = [
     {
