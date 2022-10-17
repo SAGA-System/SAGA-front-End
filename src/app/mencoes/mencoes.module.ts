@@ -1,4 +1,4 @@
-import { DxButtonModule, DxChartModule, DxScrollViewModule, DxSelectBoxModule } from 'devextreme-angular';
+import { DxButtonModule, DxChartModule, DxPieChartModule, DxScrollViewModule, DxSelectBoxModule } from 'devextreme-angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -15,7 +15,8 @@ import { FaltasComponent } from './faltas/faltas.component';
     DxScrollViewModule,
     DxChartModule,
     DxSelectBoxModule,
-    DxButtonModule
+    DxButtonModule,
+    DxPieChartModule
   ]
 })
 export class MencoesModule { }
