@@ -1,2 +1,85 @@
-<h1>Professores</h1>
-<span>/professores</span>
+<div class="row">
+  <div class="col-md-12">
+    <h3>Professores</h3>
+    <h6>/Professores</h6>
+  </div>
+</div>
+
+<div class="row col-md-12 m-0 px-0 pb-0 pt-4">
+  <div class="col-md-7"></div>
+  <div class="filtersMentions row col-md-5">
+    <div class="col-md-5 pr-2">
+      <label for="serie">Professor:</label>
+      <dx-text-box name="filterTeacher" placeholder="Pesquise o professor">
+        <dxi-button name="iconSearchFilter" location="after" [options]="{
+          icon: 'search',
+          type: 'default',
+          stylingMode: 'text',
+          disabled: true
+      }">
+        </dxi-button>
+      </dx-text-box>
+    </div>
+    <div class="col-md-3 pr-2 pl-0">
+      <label for="serie">Matéria:</label>
+      <dx-select-box name="serie" [items]="dummySelectBox" [value]="dummySelectBox[0]" [showClearButton]="false">
+      </dx-select-box>
+    </div>
+    <div class="col-md-3 px-0">
+      <label for="serie">Ordenar:</label>
+      <dx-select-box name="serie" [items]="dummySelectBox" [value]="dummySelectBox[0]" [showClearButton]="false">
+      </dx-select-box>
+    </div>
+    <div class="sgButton col-md-1 px-0">
+      <dx-button (onClick)="dummyClick()" stylingMode="contained" icon="print" type="normal">
+      </dx-button>
+    </div>
+  </div>
+
+  <div class="row col-md-12">
+    <div class="card-saga col-md-12 p-0 mt-2">
+      <div class="card-head-saga">
+        <div class="row col-md-12 p-0 mx-0">
+          <div class="col-md-5 text-left">
+            Professor
+          </div>
+          <div class="col-md-3 text-left">
+            E-mail
+          </div>
+          <div class="col-md-3 text-left">
+            Matérias
+          </div>
+          <div class="col-md-1 text-center">
+            Ações
+          </div>
+        </div>
+      </div>
+
+      <dx-scroll-view [scrollByThumb]="true" class="without-padding-x">
+        <div class="card-body-saga" *ngFor="let data of dummyData">
+
+          <div class="row col-md-12 p-0 mx-0">
+            <div class="col-md-5 text-left">
+              {{data.professor}}
+            </div>
+            <div class="col-md-3 text-left">
+              {{data.email}}
+            </div>
+            <div class="col-md-3 text-left">
+              {{data.materia}}
+            </div>
+            <div class="col-md-1 text-center">
+              <button type="button" class="btn btn-outline-dark sg-button-in-column" (click)="openDetail()">
+                <i class="far fa-eye"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </dx-scroll-view>
+    </div>
+  </div>
+
+  <app-professores-detail *ngIf="openPopupUnificacao" [openPopupUnificacao]="openPopupUnificacao"
+    (closePopupUnificacao)="openPopupUnificacao = false">
+
+  </app-professores-detail>
