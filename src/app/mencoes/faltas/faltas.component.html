@@ -1,2 +1,127 @@
-<h1>Faltas</h1>
-<span>/menções/Faltas</span>
+<div class="row">
+  <div class="col-md-7">
+    <h3>Faltas</h3>
+    <h6>/menções/Faltas</h6>
+  </div>
+
+  <div class="headersMentions col-md-5" *ngFor="let data of dummyDataSituation">
+    <span><b><u>Carga Horária</u>:</b>&nbsp;1200</span>&nbsp;&nbsp;
+    <span><b><u>Aulas dadas</u>:</b>&nbsp;463</span>&nbsp;&nbsp;
+    <span><b><u>Faltas</u>:</b>&nbsp;96</span>&nbsp;&nbsp;
+    <span><b><u>Permitidas</u>:</b>&nbsp;300</span>&nbsp;&nbsp;
+    <span><b><u>Freq Atual</u>:</b>&nbsp;79,27%</span>
+  </div>
+</div>
+
+<div class="row col-md-12 m-0 px-0 pb-0  pt-4">
+  <div class="col-md-9"></div>
+  <div class="filtersMentions row col-md-3">
+    <div class="col-md-4 px-0"></div>
+    <div class="col-md-6 px-0">
+      <label for="serie">Série:</label>
+      <dx-select-box name="serie" [items]="seriesDummy" [value]="seriesDummy[0]" [showClearButton]="false">
+      </dx-select-box>
+    </div>
+    <div class="sgButton col-md-2 px-0">
+      <dx-button (onClick)="dummyClick()" stylingMode="contained" icon="print" type="normal">
+      </dx-button>
+    </div>
+  </div>
+
+  <div class="row col-md-12">
+    <div class="card-saga col-md-12 p-0 mt-2">
+      <div class="card-head-saga">
+        <div class="row col-md-12 p-0 mx-0">
+          <div class="row col-md-8 pr-0">
+            <div class="col-md-4 text-left">
+              Matéria
+            </div>
+            <div class="col-md-2 text-center">
+              Carga Horária
+            </div>
+            <div class="col-md-2 text-center">
+              Aulas Dadas
+            </div>
+            <div class="col-md-2 text-center">
+              Faltas
+            </div>
+            <div class="col-md-2 text-center">
+              Faltas permitidas
+            </div>
+          </div>
+
+          <div class="row col-md-4 pr-0">
+            <div class="col-md-6 text-center">
+              Frequência Atual
+            </div>
+            <div class="col-md-6 text-center">
+              Frequência Total
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <dx-scroll-view [scrollByThumb]="true" class="without-padding-x">
+        <div class="card-body-saga" *ngFor="let data of dummyData">
+
+          <div class="row col-md-12 p-0 mx-0">
+            <div class="row col-md-8 pr-0">
+              <div class="col-md-4 text-left">
+                {{data.materia}}
+              </div>
+              <div class="col-md-2 text-center">
+                {{data.carga}}
+              </div>
+              <div class="col-md-2 text-center">
+                {{data.aulas}}
+              </div>
+              <div class="col-md-2 text-center">
+                {{data.faltas}}
+              </div>
+              <div class="col-md-2 text-center">
+                {{data.permitidas}}
+              </div>
+            </div>
+
+            <div class="row col-md-4 pr-0">
+              <div class="col-md-6 text-center">
+                {{data.atual}}
+              </div>
+              <div class="col-md-6 text-center">
+                {{data.total}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </dx-scroll-view>
+    </div>
+
+    <div class="card-saga col-md-12">
+      <div class="row col-md-12">
+        <div class="col-md-6">
+          <dx-chart id="chart" title="Gráfico de faltas" [dataSource]="dummyChartData" palette="Soft Pastel">
+            <dxi-series argumentField="bimestre" valueField="faltas" type="bar">
+            </dxi-series>
+            <dxo-legend [visible]="false">
+            </dxo-legend>
+            <dxo-tooltip [enabled]="true" location="edge" [customizeTooltip]="customizeTooltip">
+            </dxo-tooltip>
+          </dx-chart>
+        </div>
+        <div class="col-md-6">
+          <dx-pie-chart id="pie" type="doughnut" title="Gráfico de faltas" palette="Soft Pastel"
+            [dataSource]="dummyChartPieData">
+            <dxo-legend [margin]="0" horizontalAlignment="right" verticalAlignment="top"></dxo-legend>
+            <dxi-series argumentField="tipo" valueField="percent">
+              <dxo-small-values-grouping mode="topN" [topCount]="3"></dxo-small-values-grouping>
+              <dxo-label [visible]="true" format="fixedPoint" [customizeText]="customizeLabel">
+                <dxo-connector [visible]="true" [width]="1"></dxo-connector>
+              </dxo-label>
+            </dxi-series>
+          </dx-pie-chart>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
