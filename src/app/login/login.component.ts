@@ -12,6 +12,11 @@ export class LoginComponent implements OnInit {
   public user: User = new User();
   @Input() screenWidth = 0;
 
+  typeDummy: string[] = [
+    'Aluno',
+    'Professor'
+  ];
+
   constructor(private AuthService: AuthService) { }
 
   ngOnInit(): void {
