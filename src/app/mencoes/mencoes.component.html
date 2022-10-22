@@ -1,2 +1,126 @@
-<h1>Boletim</h1>
-<span>/menções/Boletim</span>
+<div class="row">
+  <div class="col-md-8">
+    <h3>Boletim</h3>
+    <h6>/menções/Boletim</h6>
+  </div>
+
+  <div class="headersMentions col-md-4" *ngFor="let data of dummyDataSituation">
+    <span><b><u>MB</u>:</b>&nbsp;Muito Bom</span>&nbsp;&nbsp;
+    <span><b><u>B</u>:</b>&nbsp;Bom</span>&nbsp;&nbsp;
+    <span><b><u>R</u>:</b>&nbsp;Regular</span>&nbsp;&nbsp;
+    <span><b><u>I</u>:</b>&nbsp;Insatisfatório</span>&nbsp;&nbsp;
+    <span><b><u>NA</u>:</b>&nbsp;Não avaliado</span>
+  </div>
+</div>
+
+<div class="row col-md-12 m-0 px-0 pb-0  pt-4">
+  <div class="situationSerie col-md-4" *ngFor="let data of dummyDataSituation">
+    <span>SITUAÇÃO DO MÓDULO/SÉRIE: <b><u>{{data.situacao}}</u></b> </span>
+  </div>
+  <div class="col-md-5"></div>
+  <div class="filtersMentions row col-md-3">
+    <div class="col-md-10 px-0">
+      <label for="serie">Série:</label>
+      <dx-select-box
+        name="serie"
+        [items]="seriesDummy"
+        [value]="seriesDummy[0]"
+        [showClearButton]="false">
+      </dx-select-box>
+    </div>
+    <div class="sgButton col-md-2 px-0">
+      <dx-button
+        (onClick)="dummyClick()"
+        stylingMode="contained"
+        icon="print"
+        type="normal">
+      </dx-button>
+    </div>
+  </div>
+
+  <div class="row col-md-12">
+    <div class="card-saga col-md-12 p-0 mt-2">
+      <div class="card-head-saga">
+        <div class="row col-md-12 p-0 mx-0">
+          <div class="row col-md-7 pr-0">
+            <div class="col-md-4 text-left">
+              Matéria
+            </div>
+            <div class="col-md-2 text-center">
+              1º Bim.
+            </div>
+            <div class="col-md-2 text-center">
+              2º Bim.
+            </div>
+            <div class="col-md-2 text-center">
+              3º Bim.
+            </div>
+            <div class="col-md-2 text-center">
+              4º Bim.
+            </div>
+          </div>
+
+          <div class="row col-md-5 pr-0">
+            <div class="col-md-3 text-center">
+              Final
+            </div>
+            <div class="col-md-3 text-center">
+              Conselho
+            </div>
+            <div class="col-md-3 text-center">
+              Aulas
+            </div>
+            <div class="col-md-3 text-center">
+              Faltas
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <dx-scroll-view [scrollByThumb]="true" class="without-padding-x">
+        <div class="card-body-saga" *ngFor="let data of dummyData">
+
+          <div class="row col-md-12 p-0 mx-0">
+            <div class="row col-md-7 pr-0">
+              <div class="col-md-4 text-left">
+                {{data.materia}}
+              </div>
+              <div class="col-md-2 text-center">
+                {{data.primeiro}}
+              </div>
+              <div class="col-md-2 text-center">
+                {{data.segundo}}
+              </div>
+              <div class="col-md-2 text-center">
+                {{data.terceiro}}
+              </div>
+              <div class="col-md-2 text-center">
+                {{data.quarto}}
+              </div>
+            </div>
+
+            <div class="row col-md-5 pr-0">
+              <div class="col-md-3 text-center">
+                {{data.final}}
+              </div>
+              <div class="col-md-3 text-center">
+                {{data.conselho}}
+              </div>
+              <div class="col-md-3 text-center">
+                {{data.aulas}}
+              </div>
+              <div class="col-md-3 text-center">
+                {{data.faltas}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </dx-scroll-view>
+    </div>
+
+  <div class="card-saga col-md-12">
+    <div class="row m-3" style="height: 400px;">
+      <canvas id="MyChart">{{ chart }}</canvas>
+    </div>
+  </div>
+</div>

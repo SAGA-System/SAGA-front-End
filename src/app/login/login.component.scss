@@ -1,0 +1,70 @@
+.login-title {
+  text-align: center;
+  font-size: 5rem;
+  color: #365A67;
+  padding-top: 10rem;
+  padding-left: 2rem;
+}
+
+.form-saga {
+  padding: 0px 41rem 0px 43rem;
+}
+
+::ng-deep .login-deep .dx-texteditor-container {
+  border-radius: 10px;
+}
+
+::ng-deep .login-deep .dx-texteditor-container .dx-texteditor-input-container {
+  background: #365A67;
+  color: #FFFFFF;
+
+
+  :-webkit-autofill {
+    box-shadow: 0 0 0px 1000px #365A67 inset;
+    -webkit-text-fill-color: #FFFFFF;
+  }
+}
+
+::ng-deep .login-deep .dx-texteditor-container .dx-texteditor-input-container input {
+  color: #FFFFFF;
+  font-size: 14px;
+}
+
+::ng-deep .login-deep .dx-texteditor-buttons-container {
+  background: #365A67;
+}
+
+::ng-deep .login-deep .dx-dropdowneditor-icon {
+  color: #FFFFFF;
+}
+
+.sgButton-login {
+  padding-top: 24px;
+}
+
+.btn-saga-login {
+  background: #35E18B;
+  width: 44px;
+  border-radius: 10px;
+  height: 45px;
+  font-size: 22px;
+}
+
+.btn-saga-submit {
+  background: #35E18B;
+  width: 348px;
+  border-radius: 10px;
+  height: 45px;
+  font-size: 20px;
+  box-shadow: 0 .25rem .5rem #A8ABAE;
+}
+
+img{
+  position: absolute;
+  z-index: -1;
+  border: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+

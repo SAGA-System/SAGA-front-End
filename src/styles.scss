@@ -1,34 +1,64 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 @import '~@angular/cdk/overlay-prebuilt.css';
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    position: relative;
-    font-family: 'Roboto', sans-serif;
-    background: #EDF1F5;
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  background: #EDF1F5;
 }
 
-.card {
-    display: flex;
-    flex-direction: column;
-    border-radius: .5rem;
-    background-color: #fff;
-    margin: 1.25rem 0 1.25rem 0;
-    box-shadow: 0 .25rem .5rem #e6edef;
-    color: #1D242E;
+.card-saga {
+  display: flex;
+  flex-direction: column;
+  border-radius: .5rem;
+  background-color: #fff;
+  margin: 1.25rem 0 1.25rem 0;
+  box-shadow: 0 .25rem .5rem #e6edef;
+  color: #1D242E;
+  max-height: 39rem;
 
-    .card-head {
-        padding: 1rem 1.5rem;
-        border-bottom: 1px solid #edf1f7;
-        font-size: 1rem;
-        font-weight: 600;
-    }
+  .card-head-saga {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #edf1f7;
+    font-size: 1rem;
+    font-weight: 600;
+  }
 
-    .card-body {
-        padding: 1rem 1.5rem;
-    }
+  .card-body-saga {
+    padding: 1rem 1.5rem;
+    max-height: 39rem;
+  }
+
+  .card-body-test-saga {
+    padding: 1rem 1.5rem;
+    max-height: 39rem;
+  }
+}
+
+.gc-col-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+::ng-deep .without-padding-x .dx-scrollable-container{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+::ng-deep dx-scroll-view .dx-scrollable-scrollbar .dx-scrollable-scroll .dx-scrollable-scroll-content{
+  background-color: #009099;
+}
+
+label{
+  font-size: 13px;
+  font-weight: bold;
+  text-align: left !important;
+  display: flex;
+  margin-bottom: 5px;
 }

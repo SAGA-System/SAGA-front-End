@@ -1,0 +1,41 @@
+<dx-popup [width]="700" [height]="660" [showTitle]="true" title="Dados do Professor" [dragEnabled]="false"
+  [hideOnOutsideClick]="false" [showCloseButton]="false" [(visible)]="openPopupUnificacao">
+
+  <div class="card-saga col-md-12 p-0 mt-2">
+    <div class="colorCard bgColorCard">
+    </div>
+
+    <div class="teacher-avatar-container">
+      <div class="teacher-avatar">
+        <img src="../../assets/reddit.jpg" alt="teacher" class="rounded-circle teacher-photo">
+      </div>
+    </div>
+    <div class="col-md-12 teacherData">
+      <div class="col-md-12 text-left pb-2">
+        <b>Nome:</b> Professor Bacana
+      </div>
+      <div class="col-md-12 text-left pb-2">
+        <b>Sexo:</b> Masculino
+      </div>
+      <div class="col-md-12 text-left pb-2">
+        <b>E-mail:</b> email@email.com.br
+      </div>
+      <div class="col-md-12 text-left pb-2">
+        <b>Celular:</b> 18999999999
+      </div>
+      <div class="col-md-12 text-left pb-2">
+        <b>Matérias:</b> Matemática, Português
+      </div>
+      <div class="col-md-12 text-left">
+        <b>Formação:</b> Pedagogia, letras, Ciências Contábeis
+      </div>
+    </div>
+
+    <div class="col-md-12 pb-3 pt-3 text-right">
+      <dx-button text="Fechar" icon="remove" type="normal" (onClick)="close()">
+      </dx-button>
+    </div>
+
+  </div>
+
+</dx-popup>

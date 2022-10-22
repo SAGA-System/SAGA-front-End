@@ -7,9 +7,64 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PtdsComponent implements OnInit {
 
+  dummyData?: Array<any> = [
+    {
+      materia: 'Materia Bacana'
+    },
+    {
+      materia: 'Materia Bacana'
+    },
+    {
+      materia: 'Materia Bacana'
+    },
+    {
+      materia: 'Materia Bacana'
+    },
+    {
+      materia: 'Materia Bacana'
+    },
+    {
+      materia: 'Materia Bacana'
+    },
+    {
+      materia: 'Materia Bacana'
+    },
+    {
+      materia: 'Materia Bacana'
+    },
+    {
+      materia: 'Materia Bacana'
+    },
+    {
+      materia: 'Materia Bacana'
+    },
+    {
+      materia: 'Materia Bacana'
+    },
+    {
+      materia: 'Materia Bacana'
+    },
+    {
+      materia: 'Materia Bacana'
+    },
+    {
+      materia: 'Materia Bacana'
+    },
+  ];
+
+  dummySelectBox: string[] = [
+    '1º EM',
+    '2º EM',
+    '3º EM',
+  ];
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  dummyClick() {
+    //click
   }
 
 }

@@ -1,11 +1,21 @@
-<app-sidenav (onToggleSideNav)="onToggleSideNav($event)"></app-sidenav>
+<app-sidenav
+  (onToggleSideNav)="onToggleSideNav($event)"
+  *ngIf="showMenu">
+</app-sidenav>
+
 <app-header
+  *ngIf="showMenu"
   [collapsed] ="isSideNavCollapsed"
   [screenWidth]="screenWidth">
-
 </app-header>
 
 <app-body
+  *ngIf="showMenu"
   [collapsed] ="isSideNavCollapsed"
   [screenWidth]="screenWidth">
 </app-body>
+
+<app-login
+  *ngIf="!showMenu"
+  [screenWidth]="screenWidth">
+</app-login>
