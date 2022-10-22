@@ -1,5 +1,5 @@
 import { AuthService } from './auth.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { User } from './user';
 
 @Component({
@@ -10,6 +10,7 @@ import { User } from './user';
 export class LoginComponent implements OnInit {
 
   public user: User = new User();
+  @Input() screenWidth = 0;
 
   constructor(private AuthService: AuthService) { }
 

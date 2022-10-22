@@ -47,10 +47,5 @@ export const navbarData: INavbarData[] = [
     routeLink: 'suporte',
     icon: 'far fa-question-square',
     label: 'Suporte'
-  },
-  {
-    routeLink: 'login',
-    icon: 'far fa-question-square',
-    label: 'Login'
-  },
+  }
 ];
