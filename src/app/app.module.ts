@@ -14,6 +14,8 @@ import { CdkMenuModule } from '@angular/cdk/menu';
 import { SuporteComponent } from './suporte/suporte.component';
 import { InicioModule } from './inicio/inicio.module';
 import { ProfessoresModule } from './professores/professores.module';
+import { LoginModule } from './login/login.module';
+import { AuthService } from './login/auth.service';
 
 @NgModule({
   declarations: [
@@ -31,9 +33,10 @@ import { ProfessoresModule } from './professores/professores.module';
     OverlayModule,
     CdkMenuModule,
     InicioModule,
-    ProfessoresModule
+    ProfessoresModule,
+    LoginModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

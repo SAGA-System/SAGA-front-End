@@ -1,4 +1,6 @@
+import { AuthService } from './login/auth.service';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 interface SideNavToggle{
   screenWidth: number;
@@ -16,8 +18,21 @@ export class AppComponent {
   isSideNavCollapsed = false;
   screenWidth = 0;
 
+  showMenu: boolean = false;
+
   onToggleSideNav(data: SideNavToggle): void {
     this.screenWidth = data.screenWidth;
     this.isSideNavCollapsed = data.collapsed;
+  }
+
+  constructor(private authService: AuthService, private router: Router){
+
+  }
+
+  ngOnInit(): void {
+    this.authService.showMenuEmitter.subscribe(
+      show => this.showMenu = show
+    );
+    this.router.navigate(['login'])
   }
 }
