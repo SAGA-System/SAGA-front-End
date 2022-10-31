@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { MateriasRoutingModule } from './materias-routing.module';
 import { PtdsComponent } from './ptds/ptds.component';
-import { DxSelectBoxModule, DxButtonModule, DxTextBoxModule, DxScrollViewModule } from 'devextreme-angular';
+import { DxSelectBoxModule, DxButtonModule, DxTextBoxModule, DxScrollViewModule, DxDataGridModule } from 'devextreme-angular';
 
 
 @NgModule({
@@ -18,7 +18,8 @@ import { DxSelectBoxModule, DxButtonModule, DxTextBoxModule, DxScrollViewModule 
     DxSelectBoxModule,
     DxButtonModule,
     DxTextBoxModule,
-    DxScrollViewModule
+    DxScrollViewModule,
+    DxDataGridModule
   ]
 })
 export class MateriasModule { }
