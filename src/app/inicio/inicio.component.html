@@ -2,7 +2,7 @@
   <h3>início</h3>
   <h6>/Início</h6>
 </div>
-<div class="row col-md-12 m-0 p-0">
+<div class="body-home row col-md-12 m-0 p-0">
   <div class="row col-lg-7 col-sm-12" [ngClass]="{'p-0': isMobile}">
     <div class="card-saga col-md-12 p-0">
       <div class="card-head-saga">
@@ -32,14 +32,14 @@
 
           <div class="row col-md-12 p-0" *ngIf="isMobile">
             <div class="col-md-12 gc-col-ellipsis">
-             Mensagem: {{data.messages}}
+             <b>Mensagem</b> {{data.messages}}
             </div>
             <div class="col-md-12">
-             Data: {{data.date}}
+              <b>Data</b>{{data.date}}
             </div>
             <div class="col-md-12">
-              Hora: {{data.Hour}}
-             </div>
+              <b>Hora: </b>{{data.Hour}}
+            </div>
           </div>
 
         </div>
