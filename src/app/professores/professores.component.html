@@ -1,14 +1,14 @@
-<div class="row">
+<div class="row clearfix">
   <div class="col-md-12">
     <h3>Professores</h3>
     <h6>/Professores</h6>
   </div>
 </div>
 
-<div class="row col-md-12 m-0 px-0 pb-0 pt-4">
+<div class="body-teachers row col-md-12 m-0 px-0 pb-0 pt-4">
   <div class="col-md-7"></div>
-  <div class="filtersMentions row col-md-5">
-    <div class="col-md-5 pr-2">
+  <div class="filtersMentions row col-md-5" [ngClass]="{'px-0': isMobile}">
+    <div class="col-md-5 col-sm-12" [ngClass]="{'pr-2': !isMobile, 'px-0' : isMobile}">
       <label for="serie">Professor:</label>
       <dx-text-box name="filterTeacher" placeholder="Pesquise o professor">
         <dxi-button name="iconSearchFilter" location="after" [options]="{
@@ -20,26 +20,27 @@
         </dxi-button>
       </dx-text-box>
     </div>
-    <div class="col-md-3 pr-2 pl-0">
+    <div class="col-md-3 col-sm-12" [ngClass]="{'pr-2 pl-0': !isMobile, 'px-0' : isMobile}">
       <label for="serie">Matéria:</label>
       <dx-select-box name="serie" [items]="dummySelectBox" [value]="dummySelectBox[0]" [showClearButton]="false">
       </dx-select-box>
     </div>
-    <div class="col-md-3 px-0">
+    <div class="col-md-3 col-sm-12 px-0">
       <label for="serie">Ordenar:</label>
       <dx-select-box name="serie" [items]="dummySelectBox" [value]="dummySelectBox[0]" [showClearButton]="false">
       </dx-select-box>
     </div>
-    <div class="sgButton col-md-1 px-0">
-      <dx-button (onClick)="dummyClick()" stylingMode="contained" icon="print" type="normal">
+    <div class="sgButton col-md-1 col-sm-12 px-0" [ngClass]="{'sgButton' : !isMobile, 'pt-2' : isMobile}">
+      <dx-button [ngClass]="{'col-sm-12': isMobile}" (onClick)="dummyClick()" stylingMode="contained" icon="print"
+        type="normal">
       </dx-button>
     </div>
   </div>
 
-  <div class="row col-md-12">
+  <div class="row col-md-12" [ngClass]="{'px-0': isMobile}">
     <div class="card-saga col-md-12 p-0 mt-2">
       <div class="card-head-saga">
-        <div class="row col-md-12 p-0 mx-0">
+        <div class="row col-md-12 p-0 mx-0" *ngIf="!isMobile">
           <div class="col-md-5 text-left">
             Professor
           </div>
@@ -53,12 +54,15 @@
             Ações
           </div>
         </div>
+        <div class="col-md-12 text-center" *ngIf="isMobile">
+          Professores
+        </div>
       </div>
 
       <dx-scroll-view [scrollByThumb]="true" class="without-padding-x">
         <div class="card-body-saga" *ngFor="let data of dummyData">
 
-          <div class="row col-md-12 p-0 mx-0">
+          <div class="row col-md-12 p-0 mx-0" *ngIf="!isMobile">
             <div class="col-md-5 text-left">
               {{data.professor}}
             </div>
@@ -69,6 +73,25 @@
               {{data.materia}}
             </div>
             <div class="col-md-1 text-center">
+              <button type="button" class="btn btn-outline-dark sg-button-in-column" (click)="openDetail()">
+                <i class="far fa-eye"></i>
+              </button>
+            </div>
+          </div>
+          <div class="row col-md-12 p-0" *ngIf="isMobile">
+            <div class="col-md-12 gc-col-ellipsis">
+              <b>Professor:</b> {{data.professor}}
+            </div>
+
+            <div class="col-md-12 gc-col-ellipsis">
+              <b>E-mail:</b> {{data.email}}
+            </div>
+
+            <div class="col-md-12">
+              <b>Matéria:</b> {{data.materia}}
+            </div>
+
+            <div class="col-md-12 pl-5 pt-3 text-center">
               <button type="button" class="btn btn-outline-dark sg-button-in-column" (click)="openDetail()">
                 <i class="far fa-eye"></i>
               </button>
