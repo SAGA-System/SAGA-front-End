@@ -1,10 +1,11 @@
-<div class="row">
+<div class="row clearfix">
   <div class="col-md-7">
     <h3>Faltas</h3>
     <h6>/menções/Faltas</h6>
   </div>
 
-  <div class="headersMentions col-md-5" *ngFor="let data of dummyDataSituation">
+  <div class="col-lg-5 col-sm-12" *ngFor="let data of dummyDataSituation"
+    [ngClass]="{'headersMentions' : !isMobile, 'headersMentionsMobile pt-3 px-0' : isMobile}">
     <span><b><u>Carga Horária</u>:</b>&nbsp;1200</span>&nbsp;&nbsp;
     <span><b><u>Aulas dadas</u>:</b>&nbsp;463</span>&nbsp;&nbsp;
     <span><b><u>Faltas</u>:</b>&nbsp;96</span>&nbsp;&nbsp;
@@ -13,25 +14,26 @@
   </div>
 </div>
 
-<div class="row col-md-12 m-0 px-0 pb-0  pt-4">
+<div class="body-mentions row col-md-12 m-0 px-0 pb-0  pt-4">
   <div class="col-md-9"></div>
-  <div class="filtersMentions row col-md-3">
+  <div class="row col-md-3" [ngClass]="{'text-right ': !isMobile, 'text-center pb-3 px-0' : isMobile}">
     <div class="col-md-4 px-0"></div>
-    <div class="col-md-6 px-0">
+    <div class="col-md-6 col-sm-12 px-0">
       <label for="serie">Série:</label>
       <dx-select-box name="serie" [items]="seriesDummy" [value]="seriesDummy[0]" [showClearButton]="false">
       </dx-select-box>
     </div>
-    <div class="sgButton col-md-2 px-0">
-      <dx-button (onClick)="dummyClick()" stylingMode="contained" icon="print" type="normal">
+    <div class="col-md-2 px-0 col-sm-12" [ngClass]="{'sgButton' : !isMobile, 'pt-2' : isMobile}">
+      <dx-button [ngClass]="{'col-sm-12': isMobile}" (onClick)="dummyClick()" stylingMode="contained" icon="print"
+        type="normal">
       </dx-button>
     </div>
   </div>
 
-  <div class="row col-md-12">
+  <div class="row col-md-12" [ngClass]="{'px-0': isMobile}">
     <div class="card-saga col-md-12 p-0 mt-2">
       <div class="card-head-saga">
-        <div class="row col-md-12 p-0 mx-0">
+        <div class="row col-md-12 p-0 mx-0" *ngIf="!isMobile">
           <div class="row col-md-8 pr-0">
             <div class="col-md-4 text-left">
               Matéria
@@ -59,12 +61,15 @@
             </div>
           </div>
         </div>
+        <div class="col-md-12 text-center" *ngIf="isMobile">
+          Faltas
+        </div>
       </div>
 
       <dx-scroll-view [scrollByThumb]="true" class="without-padding-x">
         <div class="card-body-saga" *ngFor="let data of dummyData">
 
-          <div class="row col-md-12 p-0 mx-0">
+          <div class="row col-md-12 p-0 mx-0" *ngIf="!isMobile">
             <div class="row col-md-8 pr-0">
               <div class="col-md-4 text-left">
                 {{data.materia}}
@@ -92,14 +97,41 @@
               </div>
             </div>
           </div>
+          <div class="row col-md-12 p-0" *ngIf="isMobile">
+            <div class="col-md-12 gc-col-ellipsis">
+              <b>Matéria:</b> {{data.materia}}
+            </div>
+
+            <div class="col-md-12">
+              <b>Carga Horária</b> {{data.carga}}
+            </div>
+
+            <div class="col-md-12">
+              <b>Aulas dadas:</b> {{data.aulas}}
+            </div>
+
+            <div class="col-md-12">
+              <b>Faltas:</b> {{data.faltas}}
+            </div>
+            <div class="col-md-12">
+              <b>Faltas permitidas:</b> {{data.permitidas}}
+            </div>
+            <div class="col-md-12">
+              <b>Frequência atual:</b> {{data.atual}}
+            </div>
+            <div class="col-md-12">
+              <b>Frequência total:</b> {{data.total}}
+            </div>
+          </div>
         </div>
       </dx-scroll-view>
     </div>
 
     <div class="card-saga col-md-12">
-      <div class="row col-md-12">
-        <div class="col-md-6">
-          <dx-chart id="chart" title="Gráfico de faltas" [dataSource]="dummyChartData" palette="Soft Pastel">
+      <div class="row col-md-12" [ngClass]="{'pr-0 text-center sgchart-direction': isMobile}">
+        <div class="col-md-6 col-sm-12">
+          <dx-chart id="chart" title="Gráfico de faltas" [dataSource]="dummyChartData" palette="Soft Pastel"
+            class="col-sm-12 px-0">
             <dxi-series argumentField="bimestre" valueField="faltas" type="bar">
             </dxi-series>
             <dxo-legend [visible]="false">
@@ -108,10 +140,13 @@
             </dxo-tooltip>
           </dx-chart>
         </div>
-        <div class="col-md-6">
-          <dx-pie-chart id="pie" type="doughnut" title="Gráfico de faltas" palette="Soft Pastel"
-            [dataSource]="dummyChartPieData">
-            <dxo-legend [margin]="0" horizontalAlignment="right" verticalAlignment="top"></dxo-legend>
+        <div class="col-md-6 col-sm-12" [ngClass]="{'pr-0': isMobile}">
+          <dx-pie-chart id="pie" type="doughnut" title="Gráfico de presença" palette="Soft Pastel"
+            [dataSource]="dummyChartPieData" class="col-sm-12 px-0">
+            <dxo-size *ngIf="isMobile" [height]="220" [width]="220">
+            </dxo-size>
+            <dxo-legend [visible]="!isMobile" [margin]="0" horizontalAlignment="right" verticalAlignment="top">
+            </dxo-legend>
             <dxi-series argumentField="tipo" valueField="percent">
               <dxo-small-values-grouping mode="topN" [topCount]="3"></dxo-small-values-grouping>
               <dxo-label [visible]="true" format="fixedPoint" [customizeText]="customizeLabel">

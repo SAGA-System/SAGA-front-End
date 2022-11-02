@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { DataPage } from 'src/app/global/data-page';
 
 @Component({
   selector: 'app-faltas',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FaltasComponent implements OnInit {
 
+  isMobile: boolean = DataPage.isMobileDefault;
+  isTablet: boolean = DataPage.isMobileDefault;
+
+  @HostListener(DataPage.eventResize, DataPage.eventResizeOptions)
+  onResize() {
+    this.isMobile = DataPage.isMobile();
+    this.isTablet = DataPage.isTablet();
+  }
+
   constructor() { }
 
   ngOnInit(): void {
+    this.onResize();
   }
 
   dummyClick() {
