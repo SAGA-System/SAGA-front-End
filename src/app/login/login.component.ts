@@ -1,6 +1,7 @@
 import { AuthService } from './auth.service';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { User } from './user';
+import { DataPage } from '../global/data-page';
 
 @Component({
   selector: 'app-login',
@@ -8,6 +9,15 @@ import { User } from './user';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+
+  isMobile: boolean = DataPage.isMobileDefault;
+  isTablet: boolean = DataPage.isMobileDefault;
+
+  @HostListener(DataPage.eventResize, DataPage.eventResizeOptions)
+  onResize() {
+    this.isMobile = DataPage.isMobile();
+    this.isTablet = DataPage.isTablet();
+  }
 
   public user: User = new User();
   @Input() screenWidth = 0;
@@ -20,6 +30,7 @@ export class LoginComponent implements OnInit {
   constructor(private AuthService: AuthService) { }
 
   ngOnInit(): void {
+    this.onResize();
   }
 
   login(){
