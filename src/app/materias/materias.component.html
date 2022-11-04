@@ -1,2 +1,23 @@
-<h1>Grade</h1>
-<span>/Matérias/Grade</span>
+<div class="col-md-8">
+  <h3>Grade</h3>
+  <h6>/Matérias/Grade</h6>
+</div>
+
+<dx-data-grid
+  id="gridContainer"
+  [dataSource]="employees"
+  keyExpr="ID"
+  [showBorders]="true"
+  [showRowLines]="true"
+  [showColumnLines]="true"
+>
+  <dxi-column dataField="segunda"></dxi-column>
+  <dxi-column dataField="terça"></dxi-column>
+  <dxi-column dataField="quarta"></dxi-column>
+  <dxi-column dataField="quinta"></dxi-column>
+  <dxi-column dataField="sexta"></dxi-column>
+
+  <div *dxTemplate="let data of 'cellTemplate'">
+    <img [src]="data.value" />
+  </div>
+</dx-data-grid>

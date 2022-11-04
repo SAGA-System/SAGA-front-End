@@ -18,3 +18,9 @@ button.sg-button-in-column{
   width: 24px;
   align-content: center;
 }
+
+@media only screen and (max-width: 600px) {
+  .body-ptds {
+    justify-content: center;
+  }
+}

@@ -1,13 +1,21 @@
 .sgButton {
   padding-top: 24px;
 }
-
-.filtersMentions {
-  text-align: right;
-}
-
 .headersMentions {
   font-size: 13px;
   text-align: right;
   padding-right: 44px;
+}
+
+@media only screen and (max-width: 600px) {
+  .body-mentions {
+    justify-content: center;
+  }
+  .headersMentionsMobile {
+    font-size: 13px;
+    text-align: center;
+  }
+  .sgchart-direction{
+    direction: rtl;
+  }
 }

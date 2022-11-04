@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { DataPage } from './../../global/data-page';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-ptds',
@@ -6,6 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ptds.component.scss']
 })
 export class PtdsComponent implements OnInit {
+
+  isMobile: boolean = DataPage.isMobileDefault;
+  isTablet: boolean = DataPage.isMobileDefault;
+
+  @HostListener(DataPage.eventResize, DataPage.eventResizeOptions)
+  onResize() {
+    this.isMobile = DataPage.isMobile();
+    this.isTablet = DataPage.isTablet();
+  }
 
   dummyData?: Array<any> = [
     {
@@ -61,6 +71,7 @@ export class PtdsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.onResize();
   }
 
   dummyClick() {

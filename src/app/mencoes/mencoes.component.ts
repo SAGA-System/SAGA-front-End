@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import Chart from 'chart.js/auto';
+import { DataPage } from '../global/data-page';
 
 @Component({
   selector: 'app-mencoes',
@@ -7,6 +8,15 @@ import Chart from 'chart.js/auto';
   styleUrls: ['./mencoes.component.scss']
 })
 export class mencoesComponent implements OnInit {
+
+  isMobile: boolean = DataPage.isMobileDefault;
+  isTablet: boolean = DataPage.isMobileDefault;
+
+  @HostListener(DataPage.eventResize, DataPage.eventResizeOptions)
+  onResize() {
+    this.isMobile = DataPage.isMobile();
+    this.isTablet = DataPage.isTablet();
+  }
 
   dummyClick() {
     //click
@@ -211,7 +221,7 @@ export class mencoesComponent implements OnInit {
         y: {
           display: true,
           title: {
-            display: true,
+            display: false,
             text: 'Notas' // texto do eixo y
           },
           ticks: { // função que permite passar strings para o eixo y
@@ -235,6 +245,7 @@ export class mencoesComponent implements OnInit {
 
   ngOnInit(): void {
     this.createChart();
+    this.onResize();
   }
 
 }
