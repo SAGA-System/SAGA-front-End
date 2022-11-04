@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { DataPage } from '../global/data-page';
 
 @Component({
   selector: 'app-professores',
@@ -6,6 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./professores.component.scss']
 })
 export class ProfessoresComponent implements OnInit {
+
+  isMobile: boolean = DataPage.isMobileDefault;
+  isTablet: boolean = DataPage.isMobileDefault;
+
+  @HostListener(DataPage.eventResize, DataPage.eventResizeOptions)
+  onResize() {
+    this.isMobile = DataPage.isMobile();
+    this.isTablet = DataPage.isTablet();
+  }
 
   public openPopupUnificacao: boolean = false;
 
@@ -98,6 +108,7 @@ export class ProfessoresComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.onResize();
   }
 
   dummyClick() {

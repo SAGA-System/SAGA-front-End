@@ -1,4 +1,4 @@
-<div class="login-body">
+<div class="login-body" *ngIf="!isMobile">
   <h1 class="login-title">
     SAGA
   </h1>
@@ -40,14 +40,57 @@
         <button class="btn btn-saga-submit" (click)="login()">Entrar</button>
       </div>
     </div>
-
-
-
   </div>
 
   <div class="footer-saga">
-    <img src="../../assets/footer.svg">
+    <img class="img-desktop" src="../../assets/footer.svg">
   </div>
 
 </div>
 
+<div class="login-body-mobile" *ngIf="isMobile" style="margin: 0; height: 100%; overflow: hidden">
+  <div class="col-md-12 text-center">
+    <h1 class="login-title-mobile">SAGA</h1>
+  </div>
+  <div>
+    <div class="form-container" style="padding: 0px 38px 38px 28px;">
+
+      <div class="row clearfix col-sm-12 m-0 px-0">
+        <div class="col-7 text pr-0">
+          <label for="loginType">Entrar Como</label>
+          <dx-select-box height="45" class="form-control login-deep" [items]="typeDummy" [value]="typeDummy[0]"
+            style="border: none;">
+          </dx-select-box>
+        </div>
+
+        <div class="col-3 pass px-1">
+          <label for="code">Cód. Etec</label>
+          <dx-text-box height="45" [(ngModel)]="user.password" class="form-control login-deep" style="border: none;">
+          </dx-text-box>
+        </div>
+        <div class="sgButton-login col-2 pl-0">
+          <button type="submit" class="btn btn-saga-login" (click)="login()">?</button>
+        </div>
+      </div>
+
+      <div class="text pt-3 col-sm-12">
+        <label for="rm">RM</label>
+        <dx-text-box height="45" [(ngModel)]="user.rm" class="form-control login-deep" style="border: none;">
+        </dx-text-box>
+      </div>
+
+      <div class="pass pt-3 col-sm-12">
+        <label for="senha">Senha</label>
+        <dx-text-box mode="password" height="45" placeholder="Enter password" [showClearButton]="false"
+          [(ngModel)]="user.password" class="form-control login-deep" style="border: none;"></dx-text-box>
+      </div>
+
+      <div class="pass pt-4 col-sm-12">
+        <button class="col-md-12 btn btn-saga-submit-mobile" (click)="login()">Entrar</button>
+      </div>
+    </div>
+  </div>
+  <div class="footer-saga-mobile">
+    <img class="img-mobile" src="../../assets/footer.svg">
+  </div>
+</div>

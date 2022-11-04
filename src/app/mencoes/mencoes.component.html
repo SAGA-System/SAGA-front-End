@@ -1,10 +1,10 @@
-<div class="row">
+<div class="row clearfix">
   <div class="col-md-8">
     <h3>Boletim</h3>
     <h6>/menções/Boletim</h6>
   </div>
-
-  <div class="headersMentions col-md-4" *ngFor="let data of dummyDataSituation">
+  <div class="col-lg-4 col-sm-12" *ngFor="let data of dummyDataSituation"
+    [ngClass]="{'headersMentions ': !isMobile, 'headersMentionsMobile pt-3' : isMobile}">
     <span><b><u>MB</u>:</b>&nbsp;Muito Bom</span>&nbsp;&nbsp;
     <span><b><u>B</u>:</b>&nbsp;Bom</span>&nbsp;&nbsp;
     <span><b><u>R</u>:</b>&nbsp;Regular</span>&nbsp;&nbsp;
@@ -13,35 +13,29 @@
   </div>
 </div>
 
-<div class="row col-md-12 m-0 px-0 pb-0  pt-4">
-  <div class="situationSerie col-md-4" *ngFor="let data of dummyDataSituation">
+<div class="body-mentions row col-md-12 m-0 px-0 pb-0 pt-4">
+  <div class="situationSerie col-md-4 col-sm-12" [ngClass]="{'pr-3 text-center pb-3' : isMobile}"
+    *ngFor="let data of dummyDataSituation">
     <span>SITUAÇÃO DO MÓDULO/SÉRIE: <b><u>{{data.situacao}}</u></b> </span>
   </div>
   <div class="col-md-5"></div>
-  <div class="filtersMentions row col-md-3">
+  <div class="filtersMentions row col-md-3" [ngClass]="{'px-0': isMobile}">
     <div class="col-md-10 px-0">
       <label for="serie">Série:</label>
-      <dx-select-box
-        name="serie"
-        [items]="seriesDummy"
-        [value]="seriesDummy[0]"
-        [showClearButton]="false">
+      <dx-select-box name="serie" [items]="seriesDummy" [value]="seriesDummy[0]" [showClearButton]="false">
       </dx-select-box>
     </div>
-    <div class="sgButton col-md-2 px-0">
-      <dx-button
-        (onClick)="dummyClick()"
-        stylingMode="contained"
-        icon="print"
+    <div class="col-md-2 px-0" [ngClass]="{'sgButton' : !isMobile, 'pt-2' : isMobile}">
+      <dx-button [ngClass]="{'col-sm-12': isMobile}" (onClick)="dummyClick()" stylingMode="contained" icon="print"
         type="normal">
       </dx-button>
     </div>
   </div>
 
-  <div class="row col-md-12">
+  <div class="row col-md-12" [ngClass]="{'px-0': isMobile}">
     <div class="card-saga col-md-12 p-0 mt-2">
       <div class="card-head-saga">
-        <div class="row col-md-12 p-0 mx-0">
+        <div class="row col-md-12 p-0 mx-0" *ngIf="!isMobile">
           <div class="row col-md-7 pr-0">
             <div class="col-md-4 text-left">
               Matéria
@@ -75,12 +69,15 @@
             </div>
           </div>
         </div>
+        <div class="row col-md-12 text-center" *ngIf="isMobile">
+          Boletim
+        </div>
       </div>
 
       <dx-scroll-view [scrollByThumb]="true" class="without-padding-x">
         <div class="card-body-saga" *ngFor="let data of dummyData">
 
-          <div class="row col-md-12 p-0 mx-0">
+          <div class="row col-md-12 p-0 mx-0" *ngIf="!isMobile">
             <div class="row col-md-7 pr-0">
               <div class="col-md-4 text-left">
                 {{data.materia}}
@@ -114,13 +111,46 @@
               </div>
             </div>
           </div>
+          <div class="row col-md-12 p-0" *ngIf="isMobile">
+            <div class="col-md-12 gc-col-ellipsis">
+              <b>Matéria:</b> {{data.materia}}
+            </div>
+
+            <div class="col-md-12">
+              <b>1º Bim.:</b> {{data.primeiro}}
+            </div>
+
+            <div class="col-md-12">
+              <b>2º Bim.:</b> {{data.segundo}}
+            </div>
+
+            <div class="col-md-12">
+              <b>3º Bim.:</b> {{data.terceiro}}
+            </div>
+            <div class="col-md-12">
+              <b>4º Bim.:</b> {{data.quarto}}
+            </div>
+            <div class="col-md-12">
+              <b>Final:</b> {{data.final}}
+            </div>
+            <div class="col-md-12">
+              <b>Conselho:</b> {{data.conselho}}
+            </div>
+
+            <div class="col-md-12">
+              <b>Aulas:</b> {{data.aulas}}
+            </div>
+            <div class="col-md-12">
+              <b>Faltas:</b> {{data.faltas}}
+            </div>
+          </div>
         </div>
       </dx-scroll-view>
     </div>
 
-  <div class="card-saga col-md-12">
-    <div class="row m-3" style="height: 400px;">
-      <canvas id="MyChart">{{ chart }}</canvas>
+    <div class="card-saga col-md-12">
+      <div class="row" [ngClass]="{'m-3': !isMobile}" [ngStyle]="{'height.px' : isMobile ? '200' : '400'}">
+        <canvas id="MyChart">{{ chart }}</canvas>
+      </div>
     </div>
   </div>
-</div>

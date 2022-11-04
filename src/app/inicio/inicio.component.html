@@ -1,10 +1,15 @@
-<h1>Início</h1>
-<span>/Início</span>
-<div class="row col-md-12 m-0 p-0">
-  <div class="row col-md-7">
+<div class="col-md-8">
+  <h3>início</h3>
+  <h6>/Início</h6>
+</div>
+<div class="body-home row col-md-12 m-0 p-0">
+  <div class="row col-lg-7 col-sm-12" [ngClass]="{'p-0': isMobile}">
     <div class="card-saga col-md-12 p-0">
       <div class="card-head-saga">
-        <div class="row col-md-12 p-0">
+        <div class="row col-md-12" *ngIf="isMobile" style="justify-content: center;">
+          Mensagens
+        </div>
+        <div class="row col-md-12 p-0" *ngIf="!isMobile">
           <div class="col-md-9">
             Mensagens para o Aluno
           </div>
@@ -16,13 +21,24 @@
       <dx-scroll-view [scrollByThumb]="true" class="without-padding-x">
         <div class="card-body-saga" *ngFor="let data of dummyData">
 
-          <div class="row col-md-12 p-0">
-
+          <div class="row col-md-12 p-0" *ngIf="!isMobile">
             <div class="col-md-9 gc-col-ellipsis">
               {{data.messages}}
             </div>
             <div class="col-md-3 text-left">
-              {{data.dateHour}}
+              {{data.date}} às {{data.Hour}}
+            </div>
+          </div>
+
+          <div class="row col-md-12 p-0" *ngIf="isMobile">
+            <div class="col-md-12 gc-col-ellipsis">
+             <b>Mensagem:</b> {{data.messages}}
+            </div>
+            <div class="col-md-12">
+              <b>Data:</b>{{data.date}}
+            </div>
+            <div class="col-md-12">
+              <b>Hora: </b>{{data.Hour}}
             </div>
           </div>
 
@@ -31,9 +47,9 @@
     </div>
   </div>
 
-  <div class="row col-md-5 ml-3 p-0">
+  <div class="row col-lg-5 col-md-12 p-0" [ngClass]="{'ml-3 ': !isMobile}">
     <div class="card-saga col-md-12 p-0">
-      <div class="card-head-saga">Notícias</div>
+      <div class="card-head-saga" [ngClass]="{'text-center': isMobile}">Notícias</div>
       <dx-scroll-view [scrollByThumb]="true" class="without-padding-x">
         <div class="card-body-saga gc-col-ellipsis" *ngFor="let data of dummyNews">
           <span>{{data.news}}</span>

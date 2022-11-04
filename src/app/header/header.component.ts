@@ -1,6 +1,7 @@
 import { userItems } from './header-data';
 import { Component, HostListener, Input, OnDestroy, OnInit } from '@angular/core';
 import { interval, Subject, takeUntil } from 'rxjs';
+import { DataPage } from '../global/data-page';
 
 @Component({
   selector: 'app-header',
@@ -10,6 +11,15 @@ import { interval, Subject, takeUntil } from 'rxjs';
 export class HeaderComponent implements OnInit, OnDestroy {
   @Input() collapsed = false;
   @Input() screenWidth = 0;
+
+  isMobile: boolean = DataPage.isMobileDefault;
+  isTablet: boolean = DataPage.isMobileDefault;
+
+  @HostListener(DataPage.eventResize, DataPage.eventResizeOptions)
+  onResize() {
+    this.isMobile = DataPage.isMobile();
+    this.isTablet = DataPage.isTablet();
+  }
 
   canShowSearchAsOverlay = false; //temporary
 
@@ -29,12 +39,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.$inActive.unsubscribe;
   }
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any){
-    this.checkCanShowSearchAsOverlay(window.innerWidth);
-  }
-
   ngOnInit(): void {
+    this.onResize();
     this.checkCanShowSearchAsOverlay(window.innerWidth);
     this.startClock();
   }

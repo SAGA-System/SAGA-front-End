@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { DataPage } from '../global/data-page';
 
 @Component({
   selector: 'app-inicio',
@@ -7,87 +8,70 @@ import { Component, OnInit } from '@angular/core';
 })
 export class inicioComponent implements OnInit {
 
+  isMobile: boolean = DataPage.isMobileDefault;
+  isTablet: boolean = DataPage.isMobileDefault;
+
+  @HostListener(DataPage.eventResize, DataPage.eventResizeOptions)
+  onResize() {
+    this.isMobile = DataPage.isMobile();
+    this.isTablet = DataPage.isTablet();
+  }
+
   dummyData?: Array<any> = [
     {
       messages: 'mensagem bacana',
-      dateHour: '21/01/21 00:00'
+      date: '21/01/21',
+      Hour: '00:00'
     },
     {
       messages: 'mensagem bacana',
-      dateHour: '21/01/21 00:00'
+      date: '21/01/21',
+      Hour: '00:00'
     },
     {
       messages: 'mensagem bacana',
-      dateHour: '21/01/21 00:00'
+      date: '21/01/21',
+      Hour: '00:00'
     },
     {
       messages: 'mensagem bacana',
-      dateHour: '21/01/21 00:00'
+      date: '21/01/21',
+      Hour: '00:00'
     },
     {
       messages: 'mensagem bacana',
-      dateHour: '21/01/21 00:00'
+      date: '21/01/21',
+      Hour: '00:00'
     },
     {
       messages: 'mensagem bacana',
-      dateHour: '21/01/21 00:00'
+      date: '21/01/21',
+      Hour: '00:00'
     },
     {
       messages: 'mensagem bacana',
-      dateHour: '21/01/21 00:00'
+      date: '21/01/21',
+      Hour: '00:00'
     },
     {
       messages: 'mensagem bacana',
-      dateHour: '21/01/21 00:00'
+      date: '21/01/21',
+      Hour: '00:00'
     },
     {
       messages: 'mensagem bacana',
-      dateHour: '21/01/21 00:00'
+      date: '21/01/21',
+      Hour: '00:00'
     },
     {
       messages: 'mensagem bacana',
-      dateHour: '21/01/21 00:00'
+      date: '21/01/21',
+      Hour: '00:00'
     },
     {
       messages: 'mensagem bacana',
-      dateHour: '21/01/21 00:00'
-    },
-    {
-      messages: 'mensagem bacana',
-      dateHour: '21/01/21 00:00'
-    },
-    {
-      messages: 'mensagem bacana',
-      dateHour: '21/01/21 00:00'
-    },
-    {
-      messages: 'mensagem bacana',
-      dateHour: '21/01/21 00:00'
-    },
-    {
-      messages: 'mensagem bacana',
-      dateHour: '21/01/21 00:00'
-    },
-    {
-      messages: 'mensagem bacana',
-      dateHour: '21/01/21 00:00'
-    },
-
-    {
-      messages: 'mensagem bacana',
-      dateHour: '21/01/21 00:00'
-    },
-    {
-      messages: 'mensagem bacana',
-      dateHour: '21/01/21 00:00'
-    },
-    {
-      messages: 'mensagem bacana',
-      dateHour: '21/01/21 00:00'
-    },
-    {
-      messages: 'mensagem bacana',
-      dateHour: '21/01/21 00:00'
+      date: '21/01/21',
+      Hour: '00:00'
     },
 
   ];
