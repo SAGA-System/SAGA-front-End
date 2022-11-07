@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { DataPage } from '../global/data-page';
 
 @Component({
   selector: 'app-materias',
@@ -7,46 +8,58 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MateriasComponent implements OnInit {
 
-  employees: any = [
+  isMobile: boolean = DataPage.isMobileDefault;
+  isTablet: boolean = DataPage.isMobileDefault;
+
+  @HostListener(DataPage.eventResize, DataPage.eventResizeOptions)
+  onResize() {
+    this.isMobile = DataPage.isMobile();
+    this.isTablet = DataPage.isTablet();
+  }
+
+  dummyData: any = [
     {
-    ID: 1,
-    segunda: 'teste',
-    terça: 'teste 2',
-    quarta: 'teste 3.',
-    quinta: 'teste 4',
-    sexta: 'teste 5',
+      teste: 'Aula Bacana',
+      turma_id: 1
     },
     {
-      ID: 2,
-      segunda: 'teste 6',
-      terça: 'teste 7 ',
-      quarta: 'teste 8.',
-      quinta: 'teste 9',
-      sexta: 'teste 10',
-      },
-
-      {
-        ID: 1,
-        segunda: 'teste 11',
-        terça: 'teste 12',
-        quarta: 'teste 13.',
-        quinta: 'teste 14',
-        sexta: 'teste 15',
-        },
-        {
-          ID: 2,
-          segunda: 'teste 16',
-          terça: 'teste 17',
-          quarta: 'teste 18.',
-          quinta: 'teste 19',
-          sexta: 'teste 20',
-          },
-
-  ];
+      teste: 'Aula Bacana',
+      turma_id: 2
+    },
+    {
+      teste: 'Aula Bacana',
+      turma_id: 2
+    },
+    {
+      teste: 'Aula Bacana',
+      turma_id: 2
+    },
+    {
+      teste: 'Aula Bacana',
+      turma_id: 0
+    },
+    {
+      teste: 'Aula Bacana',
+      turma_id: 1
+    },
+  ]
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  teste(): string{
+    let styleClass = '';
+
+    if(this.dummyData.turma_id = 1){
+      styleClass = 'turma-a';
+    }else if(this.dummyData.turma_id = 2){
+      styleClass = 'turma-b'
+    }else{
+      styleClass = 'todos'
+    }
+    return styleClass;
   }
 
 }

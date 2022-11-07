@@ -3,21 +3,51 @@
   <h6>/Matérias/Grade</h6>
 </div>
 
-<dx-data-grid
-  id="gridContainer"
-  [dataSource]="employees"
-  keyExpr="ID"
-  [showBorders]="true"
-  [showRowLines]="true"
-  [showColumnLines]="true"
->
-  <dxi-column dataField="segunda"></dxi-column>
-  <dxi-column dataField="terça"></dxi-column>
-  <dxi-column dataField="quarta"></dxi-column>
-  <dxi-column dataField="quinta"></dxi-column>
-  <dxi-column dataField="sexta"></dxi-column>
-
-  <div *dxTemplate="let data of 'cellTemplate'">
-    <img [src]="data.value" />
+  <div class="row col-md-12 pt-4" [ngClass]="{'px-0': isMobile}">
+    <div class="card-saga col-md-12 p-0 mt-2">
+      <div class="card-head-saga">
+        <div class="row col-md-12 p-0 mx-0" *ngIf="!isMobile">
+          <div class="col-md-2 text-center">
+            Segunda
+          </div>
+          <div class="col-md-2 text-center">
+            Terça
+          </div>
+          <div class="col-md-2 text-center">
+            Quarta
+          </div>
+          <div class="col-md-2 text-center">
+            Quinta
+          </div>
+          <div class="col-md-2 text-center">
+            Sexta
+          </div>
+          <div class="col-md-2 text-center">
+            Sábado
+          </div>
+        </div>
+      </div>
+        <div class="card-body-saga" *ngFor="let data of dummyData">
+          <div class="row col-md-12 p-0 mx-0" *ngIf="!isMobile">
+            <div class="col-md-2">
+              <div class="card text-center sg-card-grid"><span [ngClass]="teste()">{{data.teste}}</span></div>
+            </div>
+            <div class="col-md-2">
+              <div class="card text-center sg-card-grid"><span [ngClass]="teste()">{{data.teste}}</span></div>
+            </div>
+            <div class="col-md-2">
+              <div class="card text-center sg-card-grid"><span [ngClass]="teste()">{{data.teste}}</span></div>
+            </div>
+            <div class="col-md-2">
+              <div class="card text-center sg-card-grid"><span [ngClass]="teste()">{{data.teste}}</span></div>
+            </div>
+            <div class="col-md-2">
+              <div class="card text-center sg-card-grid"><span [ngClass]="teste()">{{data.teste}}</span></div>
+            </div>
+            <div class="col-md-2">
+              <div class="card text-center sg-card-grid"><span [ngClass]="teste()">{{data.teste}}</span></div>
+            </div>
+          </div>
+        </div>
+    </div>
   </div>
-</dx-data-grid>
