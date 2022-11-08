@@ -44,17 +44,82 @@ export class MateriasComponent implements OnInit {
     },
   ]
 
+
+  dummyDataMobile: any = [
+    {
+      teste: 'Segunda',
+      primeira: 'aula 1',
+      segunda: 'aula 2',
+      terceira: 'aula 3',
+      quarta: 'aula 4',
+      quinta: 'aula 5',
+      sexta: 'aula 6',
+      turma_id: 1
+    },
+    {
+      teste: 'Terça',
+      primeira: 'aula 1',
+      segunda: 'aula 2',
+      terceira: 'aula 3',
+      quarta: 'aula 4',
+      quinta: 'aula 5',
+      sexta: 'aula 6',
+      turma_id: 2
+    },
+    {
+      teste: 'Quarta',
+      primeira: 'aula 1',
+      segunda: 'aula 2',
+      terceira: 'aula 3',
+      quarta: 'aula 4',
+      quinta: 'aula 5',
+      sexta: 'aula 6',
+      turma_id: 2
+    },
+    {
+      teste: 'Quinta',
+      primeira: 'aula 1',
+      segunda: 'aula 2',
+      terceira: 'aula 3',
+      quarta: 'aula 4',
+      quinta: 'aula 5',
+      sexta: 'aula 6',
+      turma_id: 2
+    },
+    {
+      teste: 'Sexta',
+      primeira: 'aula 1',
+      segunda: 'aula 2',
+      terceira: 'aula 3',
+      quarta: 'aula 4',
+      quinta: 'aula 5',
+      sexta: 'aula 6',
+      turma_id: 0
+    },
+    {
+      teste: 'Sábado',
+      primeira: 'aula 1',
+      segunda: 'aula 2',
+      terceira: 'aula 3',
+      quarta: 'aula 4',
+      quinta: 'aula 5',
+      sexta: 'aula 6',
+      turma_id: 1
+    },
+  ]
+
   constructor() { }
 
   ngOnInit(): void {
+    this.onResize();
   }
 
-  teste(): string{
+  colorTurma(turma_id: number): string{
     let styleClass = '';
 
-    if(this.dummyData.turma_id = 1){
+    if(turma_id == 1){
       styleClass = 'turma-a';
-    }else if(this.dummyData.turma_id = 2){
+    }else if(turma_id == 2){
       styleClass = 'turma-b'
     }else{
       styleClass = 'todos'
