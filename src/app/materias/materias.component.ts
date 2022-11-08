@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { DataPage } from '../global/data-page';
 
 @Component({
   selector: 'app-materias',
@@ -7,46 +8,123 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MateriasComponent implements OnInit {
 
-  employees: any = [
+  isMobile: boolean = DataPage.isMobileDefault;
+  isTablet: boolean = DataPage.isMobileDefault;
+
+  @HostListener(DataPage.eventResize, DataPage.eventResizeOptions)
+  onResize() {
+    this.isMobile = DataPage.isMobile();
+    this.isTablet = DataPage.isTablet();
+  }
+
+  dummyData: any = [
     {
-    ID: 1,
-    segunda: 'teste',
-    terça: 'teste 2',
-    quarta: 'teste 3.',
-    quinta: 'teste 4',
-    sexta: 'teste 5',
+      teste: 'Aula Bacana',
+      turma_id: 1
     },
     {
-      ID: 2,
-      segunda: 'teste 6',
-      terça: 'teste 7 ',
-      quarta: 'teste 8.',
-      quinta: 'teste 9',
-      sexta: 'teste 10',
-      },
+      teste: 'Aula Bacana',
+      turma_id: 2
+    },
+    {
+      teste: 'Aula Bacana',
+      turma_id: 2
+    },
+    {
+      teste: 'Aula Bacana',
+      turma_id: 2
+    },
+    {
+      teste: 'Aula Bacana',
+      turma_id: 0
+    },
+    {
+      teste: 'Aula Bacana',
+      turma_id: 1
+    },
+  ]
 
-      {
-        ID: 1,
-        segunda: 'teste 11',
-        terça: 'teste 12',
-        quarta: 'teste 13.',
-        quinta: 'teste 14',
-        sexta: 'teste 15',
-        },
-        {
-          ID: 2,
-          segunda: 'teste 16',
-          terça: 'teste 17',
-          quarta: 'teste 18.',
-          quinta: 'teste 19',
-          sexta: 'teste 20',
-          },
 
-  ];
+  dummyDataMobile: any = [
+    {
+      teste: 'Segunda',
+      primeira: 'aula 1',
+      segunda: 'aula 2',
+      terceira: 'aula 3',
+      quarta: 'aula 4',
+      quinta: 'aula 5',
+      sexta: 'aula 6',
+      turma_id: 1
+    },
+    {
+      teste: 'Terça',
+      primeira: 'aula 1',
+      segunda: 'aula 2',
+      terceira: 'aula 3',
+      quarta: 'aula 4',
+      quinta: 'aula 5',
+      sexta: 'aula 6',
+      turma_id: 2
+    },
+    {
+      teste: 'Quarta',
+      primeira: 'aula 1',
+      segunda: 'aula 2',
+      terceira: 'aula 3',
+      quarta: 'aula 4',
+      quinta: 'aula 5',
+      sexta: 'aula 6',
+      turma_id: 2
+    },
+    {
+      teste: 'Quinta',
+      primeira: 'aula 1',
+      segunda: 'aula 2',
+      terceira: 'aula 3',
+      quarta: 'aula 4',
+      quinta: 'aula 5',
+      sexta: 'aula 6',
+      turma_id: 2
+    },
+    {
+      teste: 'Sexta',
+      primeira: 'aula 1',
+      segunda: 'aula 2',
+      terceira: 'aula 3',
+      quarta: 'aula 4',
+      quinta: 'aula 5',
+      sexta: 'aula 6',
+      turma_id: 0
+    },
+    {
+      teste: 'Sábado',
+      primeira: 'aula 1',
+      segunda: 'aula 2',
+      terceira: 'aula 3',
+      quarta: 'aula 4',
+      quinta: 'aula 5',
+      sexta: 'aula 6',
+      turma_id: 1
+    },
+  ]
 
   constructor() { }
 
   ngOnInit(): void {
+    this.onResize();
+  }
+
+  colorTurma(turma_id: number): string{
+    let styleClass = '';
+
+    if(turma_id == 1){
+      styleClass = 'turma-a';
+    }else if(turma_id == 2){
+      styleClass = 'turma-b'
+    }else{
+      styleClass = 'todos'
+    }
+    return styleClass;
   }
 
 }

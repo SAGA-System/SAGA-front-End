@@ -1,0 +1,36 @@
+.sg-card-grid{
+  height: 58px;
+  background-color: #F7F8FA;
+  border-radius: 8px;
+}
+
+.turma-a{
+  line-height: 48px;
+  border-top: outset 6px #4D66F3;
+  border-radius: 6px;
+}
+
+.turma-b{
+  line-height: 48px;
+  border-top: outset 6px #224957;
+  border-radius: 6px;
+}
+
+.todos{
+  line-height: 48px;
+  border-top: outset 6px #CFD8DC;
+  border-radius: 6px;
+}
+
+.headersGrid {
+  font-size: 13px;
+  text-align: right;
+  padding-right: 44px;
+}
+
+@media only screen and (max-width: 600px) {
+  .headersGridMobile {
+    font-size: 13px;
+    text-align: center;
+  }
+}
