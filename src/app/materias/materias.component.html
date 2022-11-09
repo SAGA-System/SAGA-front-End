@@ -1,23 +1,113 @@
-<div class="col-md-8">
-  <h3>Grade</h3>
-  <h6>/Matérias/Grade</h6>
+<div class="row clearfix">
+  <div class="col-md-8">
+    <h3>Grade</h3>
+    <h6>/Materias/Grade</h6>
+  </div>
+  <div class="row col-lg-4 col-sm-12" [ngClass]="{'headersGrid ': !isMobile, 'headersGridMobile pt-3' : isMobile}">
+    <span class="col-md-4 px-0">
+      <u><b>Turma A:</b></u>
+      <i class="pl-2 fa fa-circle" style="color: #4D66F3; font-size: 18px;"></i>
+    </span>
+    <span class="col-md-4 px-0">
+      <u><b>Turma B:</b></u>
+      <i class="pl-2 fa fa-circle" style="color: #224957; font-size: 18px;"></i>
+    </span>
+    <span class="col-md-4 px-0">
+      <u><b>Todos:</b></u>
+      <i class="pl-2 fa fa-circle" style="color: #CFD8DC; font-size: 18px;"></i>
+    </span>
+  </div>
 </div>
 
-<dx-data-grid
-  id="gridContainer"
-  [dataSource]="employees"
-  keyExpr="ID"
-  [showBorders]="true"
-  [showRowLines]="true"
-  [showColumnLines]="true"
->
-  <dxi-column dataField="segunda"></dxi-column>
-  <dxi-column dataField="terça"></dxi-column>
-  <dxi-column dataField="quarta"></dxi-column>
-  <dxi-column dataField="quinta"></dxi-column>
-  <dxi-column dataField="sexta"></dxi-column>
+<div class="row col-md-12 pt-4" [ngClass]="{'px-0': isMobile}">
+  <div class="card-saga col-md-12 p-0 mt-2">
+    <div class="card-head-saga px-0">
+      <div class="row col-md-12 p-0 mx-0" *ngIf="!isMobile">
+        <div class="col-md-2 text-center">
+          Segunda
+        </div>
+        <div class="col-md-2 text-center">
+          Terça
+        </div>
+        <div class="col-md-2 text-center">
+          Quarta
+        </div>
+        <div class="col-md-2 text-center">
+          Quinta
+        </div>
+        <div class="col-md-2 text-center">
+          Sexta
+        </div>
+        <div class="col-md-2 text-center">
+          Sábado
+        </div>
+      </div>
+      <div class="row col-md-12 p-0 mx-0" *ngIf="isMobile">
+        <div class="col-md-12 text-center">
+          Grade de aulas
+        </div>
+      </div>
+    </div>
+    <div style="flex-direction: row; display: flex; width: 100%;" *ngIf="!isMobile">
+      <div class="card-body-saga px-0" *ngFor="let data of dummyData" style="width: 100%;">
+        <div class="row  p-0 mx-0" *ngIf="!isMobile" style="flex-direction: column; width: 100%; gap: 12px;">
+          <div class="col-md-12">
+            <div class="card text-center sg-card-grid"><span [ngClass]="colorTurma(data.turma_id)">{{data.teste}}</span>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card text-center sg-card-grid"><span [ngClass]="colorTurma(data.turma_id)">{{data.teste}}</span>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card text-center sg-card-grid"><span [ngClass]="colorTurma(data.turma_id)">{{data.teste}}</span>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card text-center sg-card-grid"><span [ngClass]="colorTurma(data.turma_id)">{{data.teste}}</span>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card text-center sg-card-grid"><span [ngClass]="colorTurma(data.turma_id)">{{data.teste}}</span>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card text-center sg-card-grid"><span [ngClass]="colorTurma(data.turma_id)">{{data.teste}}</span>
+            </div>
+          </div>
+        </div>
 
-  <div *dxTemplate="let data of 'cellTemplate'">
-    <img [src]="data.value" />
+      </div>
+    </div>
+    <dx-scroll-view [scrollByThumb]="true" class="without-padding-x" *ngIf="isMobile">
+      <div class="card-body-saga" *ngFor="let data of dummyDataMobile">
+        <div class="row col-md-12 p-0 mx-0" >
+          <div class="col-md-12 pb-2 text-center gc-col-ellipsis">
+            <u><b>{{data.teste}}</b> </u>
+          </div>
+          <div class="col-md-12 text-center px-0 mx-0">
+            <div class="col-md-12">
+              <i class="pr-2 fa fa-circle" style="color: #4D66F3;"></i><b>1º Aula:</b> {{data.primeira}}
+            </div>
+            <div class="col-md-12">
+              <i class="pr-2 fa fa-circle" style="color: #224957;"></i><b>2º Aula:</b> {{data.segunda}}
+            </div>
+            <div class="col-md-12">
+              <i class="pr-2 fa fa-circle" style="color: #4D66F3;"></i><b>3º Aula:</b> {{data.terceira}}
+            </div>
+            <div class="col-md-12">
+              <i class="pr-2 fa fa-circle" style="color: #CFD8DC;"></i><b>4º Aula:</b> {{data.quarta}}
+            </div>
+            <div class="col-md-12">
+              <i class="pr-2 fa fa-circle" style="color: #CFD8DC;"></i><b>5º Aula:</b> {{data.quinta}}
+            </div>
+            <div class="col-md-12">
+              <i class="pr-2 fa fa-circle" style="color: #CFD8DC;"></i><b>6º Aula:</b> {{data.sexta}}
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </dx-scroll-view>
   </div>
-</dx-data-grid>
+</div>
