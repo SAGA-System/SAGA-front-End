@@ -16,6 +16,7 @@ import { InicioModule } from './inicio/inicio.module';
 import { ProfessoresModule } from './professores/professores.module';
 import { LoginModule } from './login/login.module';
 import { AuthService } from './login/auth.service';
+import { SuporteModule } from './suporte/suporte.module';
 
 @NgModule({
   declarations: [
@@ -23,8 +24,7 @@ import { AuthService } from './login/auth.service';
     BodyComponent,
     SidenavComponent,
     SublevelMenuComponent,
-    HeaderComponent,
-    SuporteComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +34,8 @@ import { AuthService } from './login/auth.service';
     CdkMenuModule,
     InicioModule,
     ProfessoresModule,
-    LoginModule
+    LoginModule,
+    SuporteModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
