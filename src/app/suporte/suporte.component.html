@@ -1,2 +1,37 @@
-<h1>Suporte</h1>
-<span>/suporte</span>
+<div class="row clearfix">
+  <div class="col-md-12">
+    <h3>Suporte</h3>
+    <h6>/Suporte</h6>
+  </div>
+</div>
+
+<div class="row col-md-12" [ngClass]="{'suport-body': !isMobile}">
+  <div class="card-saga col-md-12 p-0 mt-2">
+    <div class="card-body-saga" [ngClass]="{'px-0': isMobile}">
+      <div class="col-md-12 pb-2">
+        <label>Nome Completo</label>
+        <dx-text-box class="form-control">
+        </dx-text-box>
+      </div>
+      <div class="col-md-12 py-2">
+        <label>E-mail</label>
+        <dx-text-box class="form-control">
+        </dx-text-box>
+      </div>
+      <div class="col-md-12">
+        <label>Motivo</label>
+        <dx-select-box class="form-control">
+        </dx-select-box>
+      </div>
+      <div class="col-md-12 pt-2">
+        <label>Mensagem</label>
+        <dx-text-area class="form-control">
+        </dx-text-area>
+      </div>
+      <div class="col-md-12 text-center pt-4">
+        <button class="col-md-12 btn btn-saga-submit">Enviar</button>
+      </div>
+    </div>
+
+  </div>
+</div>

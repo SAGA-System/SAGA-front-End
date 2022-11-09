@@ -79,9 +79,9 @@
 
       </div>
     </div>
-    <dx-scroll-view [scrollByThumb]="true" class="without-padding-x">
+    <dx-scroll-view [scrollByThumb]="true" class="without-padding-x" *ngIf="isMobile">
       <div class="card-body-saga" *ngFor="let data of dummyDataMobile">
-        <div class="row col-md-12 p-0 mx-0" *ngIf="isMobile">
+        <div class="row col-md-12 p-0 mx-0" >
           <div class="col-md-12 pb-2 text-center gc-col-ellipsis">
             <u><b>{{data.teste}}</b> </u>
           </div>
