@@ -18,10 +18,24 @@ Repositório da aplicação **FrontEnd** do sistema **SAGA**, desenvolvido em 20
 - Instalar [Node.js] que inclui o npm
 - rodar o comando npm i dentro do projeto
 ```
+## Criar componentes:
+
+```
+ng g c componente
+```
+## Criar módulos:
+
+```
+ng g m modulo
+```
+## Criar services:
+
+```
+ng g s service
+```
 ## Rodar Aplicação:
 
 ```
-cd [PROJECT NAME]
 ng serve
 ```
 
