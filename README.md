@@ -1,3 +1,30 @@
+# SAGA
+
+Repositório da aplicação **FrontEnd** do sistema **SAGA**, desenvolvido em 2022 para o TCC do Ensino Médio integrado ao técnico de Desenvolvimento de Sistemas(Novotec) na ETEC Prof Eudécio Luiz Vicente. 
+
+## Utilizado no projeto:
+```
+- Angular
+- Typescript
+- SCSS
+- font Awesome
+- DevExtreme
+- Bootstrap
+- NodeJs
+```
+
+## Pré requisitos:
+```
+- Instalar [Node.js] que inclui o npm
+- rodar o comando npm i dentro do projeto
+```
+## Rodar Aplicação:
+
+```
+cd [PROJECT NAME]
+ng serve
+```
+
 <table align="center">
 <tr>
 <td> 
