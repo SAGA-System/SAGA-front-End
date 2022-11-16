@@ -136,6 +136,7 @@ export class inicioComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.onResize();
   }
 
 }
