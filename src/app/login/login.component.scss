@@ -37,7 +37,6 @@
 ::ng-deep .login-deep .dx-dropdowneditor-icon {
   color: #FFFFFF;
 }
-
 .sgButton-login {
   padding-top: 24px;
 }
@@ -59,13 +58,50 @@
   box-shadow: 0 .25rem .5rem #A8ABAE;
 }
 
-img{
-  position: absolute;
-  z-index: -1;
-  border: 0;
+
+.logomk2 {
+  margin-bottom: 32px;
+}
+
+.login-body{
   display: flex;
+  height: 100vh;
   width: 100%;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.footer-sagamk2{
+  display: flex;
+  flex-direction: column;
+  position: relative;
   height: 100%;
+  width: 100%;
+  align-items: flex-end;
+  justify-content: flex-end;
+  z-index: -1;
+
+  img{
+    width: 100%;
+  }
+
+  @media screen and (max-height: 580px) {
+    img {
+      display: none;
+    }
+  }
+}
+
+.cardmk2{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 300px;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
 }
 
 @media only screen and (max-width: 600px) {
@@ -85,14 +121,12 @@ img{
     font-size: 20px;
     box-shadow: 0 .25rem .5rem #A8ABAE;
   }
+}
 
-  img{
-    position: absolute;
-    z-index: -1;
-    border: 0;
-    display: flex;
-    width: 111%;
-    height: 218px;
+@media only screen and (max-width: 768px) {
+  .teste{
+    flex-wrap: nowrap;
+    width: 100%;
   }
 }
 
