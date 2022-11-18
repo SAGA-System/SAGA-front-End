@@ -13,7 +13,7 @@ export class AuthService {
   constructor(private router: Router) { }
 
   loginAuth(user: User) {
-    if (user.rm === '06371' &&
+    if (user.rm === '123456' &&
       user.password === '123456') {
       this.userAuth = true;
       this.showMenuEmitter.emit(true);
